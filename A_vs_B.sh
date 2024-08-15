@@ -64,35 +64,35 @@ echo -e "\nThe A Chromosomes are:\n\t${A_names[@]}\n\nThe B Chromosomes are:\n\t
 
 ################# Now index out the chromosomes
 
-#echo -e "\n\nSAMTOOLS>>> Indexing out the A chromosomes..\n\n"
+echo -e "\n\nSAMTOOLS>>> Indexing out the A chromosomes..\n\n"
 
-#cmd1="samtools faidx ${genome} ${A_names[@]} -o ${outputdir}/SalTr_Ref_A_chroms.fasta"
+cmd1="samtools faidx ${genome} ${A_names[@]} -o ${outputdir}/SalTr_Ref_A_chroms.fasta"
 
-#echo -e "${cmd1}"
+echo -e "${cmd1}"
 
-#$cmd1
+$cmd1
 
-#echo -e "\n\nSAMTOOLS>>> ..done with A chromosomes.\n\nStarting B chromosomes..\n\n"
+echo -e "\n\nSAMTOOLS>>> ..done with A chromosomes.\n\nStarting B chromosomes..\n\n"
 
-#cmd2="samtools faidx ${genome} ${B_names[@]} -o ${outputdir}/SalTr_Ref_B_chroms.fasta" 
+cmd2="samtools faidx ${genome} ${B_names[@]} -o ${outputdir}/SalTr_Ref_B_chroms.fasta" 
 
-#echo -e "${cmd2}"
+echo -e "${cmd2}"
 
-#$cmd2
+$cmd2
 
-#echo -e "\n\nSAMTOOLS>>> ..done with B chromosomes.\n\nIndexes can be found in:\t${outputdir}\n\n"
+echo -e "\n\nSAMTOOLS>>> ..done with B chromosomes.\n\nIndexes can be found in:\t${outputdir}\n\n"
 
 ############### Now run the synteny analysis with minimap:
 
-#echo -e "\n\nminimap2>>> Running Synteny analysis on the indexed chromosomes..\n\n"
+echo -e "\n\nminimap2>>> Running Synteny analysis on the indexed chromosomes..\n\n"
 
-#cmd3="minimap2 -I 12G -t 8 -c -o ${outputdir}/Achrom_Bchrom.paf -f 0.02 ${A_chroms} ${B_chroms}"
+cmd3="minimap2 -I 12G -t 8 -c -o ${outputdir}/Achrom_Bchrom.paf -f 0.02 ${A_chroms} ${B_chroms}"
 
-#echo -e "${cmd3}"
+echo -e "${cmd3}"
 
-#$cmd3
+$cmd3
 
-#echo -e "\n\nminimap2>>> ..finished.\n\n"
+echo -e "\n\nminimap2>>> ..finished.\n\n"
 
 ############## Exchange paf for delta
 
